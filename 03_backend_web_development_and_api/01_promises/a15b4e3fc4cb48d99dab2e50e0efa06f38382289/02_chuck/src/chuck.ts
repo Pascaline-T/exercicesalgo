@@ -2,14 +2,23 @@ import { getChuckCategories, getChuckJoke } from "../utils";
 
 function getCategories(): Promise<string[]> {
   // Your code goes here
-  getChuckCategories();
-  return new Promise ((resolve) => { 
-    if( === [""])
+  return getChuckCategories();
+  // return new Promise((resolve, reject) => {
+  //   reject(new Error("Mauvaise comande"));
+  // });
 }
 
-function getJoke(categorie): Promise<string> {
+getCategories()
+  .then((result) => {
+    console.log(result);
+  })
+  .catch((error) => {
+    console.log(error);
+  });
+
+function getJoke(): any {
   // Your code goes here
-  getChuckJoke();
+  //getChuckJoke();
 }
 // Leave the line below for tests to work properly
 export { getCategories, getJoke };
