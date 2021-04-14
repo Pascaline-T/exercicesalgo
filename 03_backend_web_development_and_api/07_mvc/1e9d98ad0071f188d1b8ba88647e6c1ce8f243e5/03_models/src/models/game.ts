@@ -56,18 +56,14 @@ export class GameModel {
   }
 
   getPlatforms(): Platform[] {
-    const platforme = this.collection.map((element) => {
-      return {
-        name: element.name,
-        slug: element.slug
+    this.collection.forEach((element) => {
+      if() {
+        
       }
-    });
-    platforme.filter((item, index) => {
-      return platforme.indexOf(item) === index
     })
+
     // const gameplat2 = Array.from(new Set(gameplateform));
     // return gameplat2;
     
-    return platforme
   }
 }
