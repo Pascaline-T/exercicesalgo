@@ -27,11 +27,11 @@ export class GameModel {
   //  })
   // }
 
-  getAll(): Promise<Game[]> {
-    return this.collection
+  async getAll(): Promise<Game[]> {
+      this.collection
       .find({})
       .toArray()
-      .then((mytab) => {
+      const mytab = await this.collection
         return mytab.map((game) => {
           return {
             name: game.name,
@@ -39,8 +39,7 @@ export class GameModel {
             cover: game.cover_url,
           };
         });
-      });
-  }
+    }
 
   // findBySlug(slug: string): Promise<Game | null> {
   // return new Promise((resolve) => {
@@ -59,12 +58,13 @@ export class GameModel {
   //  })
   // }
 
-  findBySlug(slug: string): Promise<Game | null> {
-    return this.collection.findOne({ slug }).then((mytab2) => {
+  async findBySlug(slug: string): Promise<Game | null> {
+    this.collection
+    .findOne({ slug })
+    const mytab2 = await this.collection
       if (slug) {
         return mytab2;
       }
-    });
   }
 
   // findByPlatform(platform_slug: string): Promise<Game[]> {
@@ -80,11 +80,11 @@ export class GameModel {
   //    })
   //   }
 
-  findByPlatform(platform_slug: string): Promise<Game[]> {
-    return this.collection
+  async findByPlatform(platform_slug: string): Promise<Game[]> {
+    this.collection
       .find()
       .toArray()
-      .then((mytab3) => {
+      mytab3 = await this.collection
         return mytab3.filter((plateform) => {
           if (plateform.platform.slug === platform_slug) {
             return {
@@ -92,7 +92,6 @@ export class GameModel {
               slug: plateform.slug,
             };
           }
-        });
       });
   }
 
@@ -116,11 +115,11 @@ export class GameModel {
   //   }
   // }
 
-  getPlatforms(): Promise<Platform[]> {
-    return this.collection
+  async getPlatforms(): Promise<Platform[]> {
+    this.collection
       .find()
       .toArray()
-      .then((mytab4) => {
+      const mytab4 = await this.collection
         const result: Platform[] = [];
         mytab4.forEach((game) => {
           if (
@@ -135,6 +134,5 @@ export class GameModel {
           }
         });
         return result;
-      });
   }
 }
