@@ -28,17 +28,19 @@ export class GameModel {
   // }
 
   async getAll(): Promise<Game[]> {
-      this.collection
+      const avantThen = 
+      await this.collection
       .find({})
       .toArray()
-      const mytab = await this.collection
-        return mytab.map((game) => {
+      const apresThen = 
+        avantThen.map((game) => {
           return {
             name: game.name,
             slug: game.slug,
             cover: game.cover_url,
           };
         });
+        return apresThen
     }
 
   // findBySlug(slug: string): Promise<Game | null> {
@@ -59,12 +61,15 @@ export class GameModel {
   // }
 
   async findBySlug(slug: string): Promise<Game | null> {
+    const beforeThen = 
+    await
     this.collection
     .findOne({ slug })
-    const mytab2 = await this.collection
+    const afterThen = beforeThen.find
       if (slug) {
-        return mytab2;
+        return afterThen;
       }
+      return afterThen
   }
 
   // findByPlatform(platform_slug: string): Promise<Game[]> {
@@ -81,11 +86,13 @@ export class GameModel {
   //   }
 
   async findByPlatform(platform_slug: string): Promise<Game[]> {
-    this.collection
+    const avant= 
+      await
+      this.collection
       .find()
       .toArray()
-      mytab3 = await this.collection
-        return mytab3.filter((plateform) => {
+      const apres = 
+        avant.filter((plateform) => {
           if (plateform.platform.slug === platform_slug) {
             return {
               name: plateform.name,
@@ -93,6 +100,7 @@ export class GameModel {
             };
           }
       });
+      return apres
   }
 
   // getPlatforms(): Promise<Platform[]> {
@@ -116,12 +124,14 @@ export class GameModel {
   // }
 
   async getPlatforms(): Promise<Platform[]> {
+    const result: Platform[] = [];
+    const before = 
+    await
     this.collection
       .find()
       .toArray()
-      const mytab4 = await this.collection
-        const result: Platform[] = [];
-        mytab4.forEach((game) => {
+      const after = 
+        before.forEach((game) => {
           if (
             result.find((platform) => {
               return game.platform.slug === platform.slug;
@@ -131,8 +141,9 @@ export class GameModel {
               name: game.platform.name,
               slug: game.platform.slug,
             });
+          return after
           }
         });
-        return result;
+        return result
   }
 }
