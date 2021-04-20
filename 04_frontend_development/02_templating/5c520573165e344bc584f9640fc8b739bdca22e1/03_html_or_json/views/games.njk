@@ -1,0 +1,11 @@
+<h1>Games</h1>
+
+<ul>
+    {% for game in games %}
+    <li>
+        <img src="{{game.cover}}"></li>
+        {{game.name}}
+    </li>
+    {% endfor %}
+</ul>
+

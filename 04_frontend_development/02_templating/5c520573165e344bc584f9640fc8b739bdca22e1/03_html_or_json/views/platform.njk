@@ -1,0 +1,9 @@
+<h1>Platforms</h1>
+<ul>
+    {% for platform in platforms %}
+    <li>
+          <img src="{{platform.cover}}">
+          {{platform.name}}
+    </li>
+     {% endfor %}
+</ul>
