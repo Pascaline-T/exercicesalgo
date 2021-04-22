@@ -1,0 +1,15 @@
+{% extends "layout.njk" %}
+
+{% block content %}
+
+<h1>Ce jeu ci ? </h1>
+<ul>
+  <li>
+     <img src="{{game.cover_url}}"> {{game.name}}
+  </li>
+</ul>
+<p>
+  {{game.summary}}
+</p>
+
+{% endblock %}

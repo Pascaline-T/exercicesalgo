@@ -9,6 +9,8 @@ const clientWantsJson = (request: express.Request): boolean =>
 export function makeApp(gameModel: GameModel): core.Express {
   const app = express();
 
+  app.use("/assets", express.static("public"));
+
   nunjucks.configure("views", {
     autoescape: true,
     express: app
@@ -33,17 +35,24 @@ export function makeApp(gameModel: GameModel): core.Express {
   app.get("/games/:game_slug", (request, response) => {
     gameModel.findBySlug(request.params.game_slug).then((game) => {
       if (!game) {
-        response.status(404).end();
+        response.status(404).render("not-found");
       } else {
-        response.json(game);
+        if (clientWantsJson(request)) {
+          response.json(game);
+        } else {
+          response.render("game_slug", { game });
+        }
       }
     });
   });
 
   app.get("/platforms", (request, response) => {
     gameModel.getPlatforms().then((platforms) => {
-      
-      response.render("platform", { platforms });
+      if (clientWantsJson(request)) {
+        response.json(platforms);
+      } else {
+        response.render("platform", { platforms });
+      }
     });
   });
 
@@ -51,7 +60,11 @@ export function makeApp(gameModel: GameModel): core.Express {
     gameModel
       .findByPlatform(request.params.platform_slug)
       .then((gamesForPlatform) => {
-        response.json(gamesForPlatform);
+        if (clientWantsJson(request)) {
+          response.json(gamesForPlatform);
+        } else {
+          response.render("platform_slug", { gamesForPlatform });
+        }
       });
   });
 
