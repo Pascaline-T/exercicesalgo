@@ -1,35 +1,188 @@
+@import url('https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100&family=Zen+Dots&display=swap');
+
 .d-flex {
     text-align: right;
 }
 
-.btn-pink {
-    color: blue;
-    border-color: blue;
+.navbar-expand-lg {
+    border-bottom: 0.5rem rgb(44, 204, 228) solid;
 }
 
-h1 {
-    margin-left: 20rem;
-    margin: 2rem;
+.background-navbar {
+    background-color: black;
 }
+
+.btn-color {
+    color: white;
+    border-color:white;
+    font-family: 'Zen Dots', cursive;
+}
+
+.btn-color:hover {
+    background-color: rgb(54, 9, 38);
+    color: white;
+}
+
+.titre {
+    font-family: 'Zen Dots', cursive;
+    color: white;
+    text-decoration: underline;
+    font-size: 5rem;
+    padding-top: 2rem;
+    text-align: center;
+}
+
 
 .jeux {
-    margin-left: 25rem;
+    padding-top: 2rem;
+    margin-left: 10rem;
     margin-top: 2rem;
+    margin-right: 10rem; 
     text-decoration: none;
-    border: solid gray;
-    padding: 1rem;
-    margin-right: 25rem;
+    border: 0.2rem solid white;
+}
+
+
+.navbar-brand {
+    font-size: 2rem;
+}
+
+.nav-link {
+    font-size: 0.9rem;
+}
+
+.nav-item {
+    border-top: 0.3rem rgb(212, 20, 89) solid;
 }
 
 li {
     text-decoration: none;
+    border-bottom: 0.3rem rgb(212, 20, 89) solid;
+    /* margin-bottom: 2rem;*/
+    margin-right: 2rem; 
+    font-size: 0.2rem;
 }
-a {
+
+.lineEnterGames {
     text-decoration: none;
-    color: black;
+    border-bottom: 0.1rem white solid;
+    margin-bottom: 2rem;
+    margin-right: 2rem;
+}
+
+.lineEnterPlatforms {
+    text-decoration: none;
+    border-bottom: 0.1rem white solid;
+    margin-bottom: 2rem;
+    margin-right: 2rem;
+}
+
+a {
+    font-size: 1.7rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: white;
+    font-family: 'Zen Dots', cursive;
+}
+
+a:hover {
+    color:rgb(59, 36, 179)
 }
 
 img {
-    padding-bottom: 1rem;
+    padding-bottom: 2rem;
     text-decoration: none;
+    margin-right: 3rem;
+    width: 10rem;
+}
+
+.fond{
+    background-image: url(../images/fond.jpeg);
+}
+
+.platforms {
+    padding-top: 2rem;
+    margin-left: 10rem;
+    margin-top: 2rem;
+    margin-right: 10rem; 
+    text-decoration: none;
+    border: 0.2rem solid white;
+}
+
+.lienplatforms {
+    font-size: 1.7rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: white;
+    font-family: 'Zen Dots', cursive;
+}
+
+.gameslug {
+    padding-top: 2rem;
+}
+
+.namejeu{
+    font-size: 3rem;
+    font-family: 'Zen Dots', cursive;
+    color: white
+}
+
+p {
+    color: white;
+    text-align: justify;
+    margin-left: 4rem;
+    margin-right: 4rem;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.fondDeSlug {
+    background-image: url(../images/gameslug.jpeg);
+    height: 70rem;
+}
+
+.platformSlug{
+    padding-top: 2rem;
+    margin-left: 10rem;
+    margin-top: 2rem;
+    margin-right: 10rem; 
+    text-decoration: none;
+    border: 0.2rem solid white;
+}
+
+.namePlatform{
+    font-size: 2rem;
+    font-family: 'Zen Dots', cursive;
+    color: white
+}
+
+.fondnot{
+    background-color: rgb(31, 27, 54);
+    height: 100rem;
+}
+
+.titrenot{
+    font-family: 'Zen Dots', cursive;
+    color: white;
+    font-size: 5rem;
+    padding-top: 2rem;
+    text-align: center;
+}
+
+.titrenotfound{
+    font-family: 'Zen Dots', cursive;
+    color: rgb(212, 20, 89);
+    font-size: 5rem;
+    padding-top: 2rem;
+    text-align: center;
+}
+
+.gif {
+    margin-top: -70rem;
+    width: 10rem;
+    height: 10rem;
+    margin-right: 100rem;
+    display: flex;
 }

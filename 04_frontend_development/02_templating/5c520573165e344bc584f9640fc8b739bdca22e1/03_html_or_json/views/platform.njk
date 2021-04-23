@@ -1,15 +1,21 @@
 {% extends "layout.njk" %}
 
 {% block content %}
+<div class= "fond">
+      <h1 class="titre">Platforms</h1>
 
-<h1>Platforms</h1>
-<ul>
-    {% for platform in platforms %}
-    <li>
-          <img src="{{platform.cover}}">
-          <a href = "/platforms/{{platform.slug}}">{{platform.name}}</a>
-    </li>
-     {% endfor %}
-</ul>
+      <div class="platforms">
+            <ul>
+                  {% for platform in platforms %}
+                  <li class= "lineEnterPlatforms">
+                        <img src="{{platform.cover}}">
+                        <a class = "lienplatforms" href = "/platforms/{{platform.slug}}">{{platform.name}}</a>
+                  </li>
+                   {% endfor %}
+            </ul>
+      </div>
+      
+</div>
+
 
 {% endblock %}

@@ -1,16 +1,20 @@
 {% extends "layout.njk" %}
 
 {% block content %}
+<div class="fond">
+    <h1 class="titre">Games</h1>
 
-<h1>Games</h1>
+    <div class="platformSlug">
+        <ul>
+            {% for platform in gamesForPlatform %}
+            <li class="lineEnterGames">
+                <img src="{{platform.cover}}"><div class="namePlatform">{{platform.name}}</div>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+    
+</div>
 
-<ul>
-    {% for platform in gamesForPlatform %}
-    <li>
-        <img src="{{platform.cover}}">
-        {{platform.name}}
-    </li>
-    {% endfor %}
-</ul>
 
 {% endblock %}
